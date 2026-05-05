@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI27 | Predictive Logistics Intelligence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Lexend+Deca:wght@200;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ffffff;
+            --accent: #d4af37; /* Gold accent for high-end feel */
+            --bg-dark: #0a0a0a;
+            --bg-card: #141414;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--primary);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, .logo-text {
+            font-family: 'Lexend Deca', sans-serif;
+        }
+
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at center, rgba(40, 40, 40, 0.3) 0%, rgba(10, 10, 10, 1) 70%);
+        }
+
+        .premium-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .premium-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-10px);
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+            color: black;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .btn-gold:hover {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+            transform: scale(1.05);
+        }
+
+        .image-overlay {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-overlay::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to bottom, transparent 0%, var(--bg-dark) 100%);
+        }
+
+        .nav-link {
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; width: 0; height: 1px;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Submenu styling */
+        .group:hover .submenu {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .submenu {
+            display: none;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            min-width: 200px;
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navegación -->
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo Simulation -->
+            <div class="flex items-center space-x-2 group cursor-pointer">
+                <div class="w-10 h-10 border-2 border-white rounded-lg flex items-center justify-center rotate-45 group-hover:border-[#d4af37] transition-colors">
+                    <span class="rotate-[-45deg] font-bold text-xl">27</span>
+                </div>
+                <span class="logo-text text-2xl font-bold tracking-tighter">AI<span class="text-[#d4af37]">27</span></span>
+            </div>
+
+            <!-- Menú Desktop -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <div class="relative group">
+                    <a href="#" class="nav-link text-sm uppercase tracking-widest">Soluciones <i class="fas fa-chevron-down text-[10px] ml-1"></i></a>
+                    <div class="absolute top-full left-0 mt-2 submenu bg-[#141414] border border-white/10 p-4 rounded-sm">
+                        <a href="#predictive" class="block py-2 text-xs hover:text-[#d4af37] transition-colors">Inteligencia Predictiva</a>
+                        <a href="#custody" class="block py-2 text-xs hover:text-[#d4af37] transition-colors">Custodia Física Elite</a>
+                        <a href="#monitoring" class="block py-2 text-xs hover:text-[#d4af37] transition-colors">Drones y Vigilancia</a>
+                    </div>
+                </div>
+                <a href="#tecnologia" class="nav-link text-sm uppercase tracking-widest">Tecnología</a>
+                <a href="#nosotros" class="nav-link text-sm uppercase tracking-widest">Sobre AI27</a>
+                <a href="#contacto" class="btn-gold px-6 py-2 rounded-sm text-xs tracking-widest uppercase">Consultoría VIP</a>
+            </div>
+
+            <!-- Botón Móvil -->
+            <div class="md:hidden">
+                <i class="fas fa-bars text-2xl"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center hero-gradient px-6 overflow-hidden pt-20">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-[#d4af37] rounded-full blur-[150px]"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-white rounded-full blur-[150px]"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div>
+                <h2 class="text-[#d4af37] font-semibold tracking-[0.3em] uppercase mb-4 text-sm">Predictive Intelligence</h2>
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6">
+                    El Futuro de la <br> Seguridad Logística
+                </h1>
+                <p class="text-gray-400 text-lg mb-8 max-w-lg font-light leading-relaxed">
+                    No solo reaccionamos. Predecimos. AI27 utiliza algoritmos avanzados para neutralizar riesgos antes de que ocurran en las rutas más críticas del mundo.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
+                    <button class="btn-gold px-10 py-4 rounded-sm uppercase text-sm tracking-widest">Comenzar Ahora</button>
+                    <button class="border border-white/20 hover:bg-white/10 px-10 py-4 rounded-sm uppercase text-sm tracking-widest transition-all">Ver Casos de Éxito</button>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="animate-float rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=2000" alt="Logística Inteligente" class="w-full grayscale hover:grayscale-0 transition-all duration-700">
+                </div>
+                <!-- Mini Stats Overlay -->
+                <div class="absolute -bottom-6 -left-6 bg-[#141414] p-6 border border-[#d4af37]/30 rounded-sm">
+                    <p class="text-3xl font-bold text-[#d4af37]">99.9%</p>
+                    <p class="text-[10px] uppercase tracking-widest text-gray-400">Eficiencia Predictiva</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="predictive" class="py-24 bg-black">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h3 class="text-[#d4af37] font-semibold tracking-[0.3em] uppercase mb-2">Nuestras Capacidades</h3>
+                <h2 class="text-4xl font-bold">Protección Multidimensional</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Custodia -->
+                <div class="premium-card p-10 group">
+                    <div class="mb-8 overflow-hidden rounded-lg h-48">
+                        <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&q=80&w=800" alt="Custodia Vehicular" class="w-full h-full object-cover grayscale transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                    <i class="fas fa-shield-alt text-3xl text-[#d4af37] mb-6"></i>
+                    <h4 class="text-xl font-bold mb-4 uppercase tracking-tighter">Custodia de Tractos</h4>
+                    <p class="text-gray-500 font-light text-sm leading-relaxed mb-6">
+                        Vehículos de escolta blindados y personal altamente capacitado acompañando cada embarque con protocolos de grado militar.
+                    </p>
+                    <a href="#" class="text-[10px] uppercase tracking-[0.2em] font-bold text-[#d4af37] hover:underline">Saber más &rarr;</a>
+                </div>
+
+                <!-- Inteligencia -->
+                <div class="premium-card p-10 group">
+                    <div class="mb-8 overflow-hidden rounded-lg h-48">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800" alt="Inteligencia AI" class="w-full h-full object-cover grayscale transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                    <i class="fas fa-brain text-3xl text-[#d4af37] mb-6"></i>
+                    <h4 class="text-xl font-bold mb-4 uppercase tracking-tighter">AI27 Predictive</h4>
+                    <p class="text-gray-500 font-light text-sm leading-relaxed mb-6">
+                        Nuestra IA analiza miles de variables en tiempo real: clima, tráfico, reportes locales y patrones históricos para evitar incidentes.
+                    </p>
+                    <a href="#" class="text-[10px] uppercase tracking-[0.2em] font-bold text-[#d4af37] hover:underline">Saber más &rarr;</a>
+                </div>
+
+                <!-- Drones -->
+                <div class="premium-card p-10 group">
+                    <div class="mb-8 overflow-hidden rounded-lg h-48">
+                        <img src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&q=80&w=800" alt="Vigilancia Drone" class="w-full h-full object-cover grayscale transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                    <i class="fas fa-eye text-3xl text-[#d4af37] mb-6"></i>
+                    <h4 class="text-xl font-bold mb-4 uppercase tracking-tighter">Monitoreo con Drones</h4>
+                    <p class="text-gray-500 font-light text-sm leading-relaxed mb-6">
+                        Vigilancia aérea táctica para tramos de alto riesgo, proporcionando visibilidad previa de 360 grados sin puntos ciegos.
+                    </p>
+                    <a href="#" class="text-[10px] uppercase tracking-[0.2em] font-bold text-[#d4af37] hover:underline">Saber más &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Section -->
+    <section class="py-20 bg-[#0a0a0a] border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="image-overlay rounded-sm">
+                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=1000" alt="Chofer Profesional" class="w-full grayscale">
+            </div>
+            <div>
+                <h2 class="text-3xl font-bold mb-6">Capital Humano de Élite</h2>
+                <p class="text-gray-400 font-light mb-8 leading-relaxed">
+                    Nuestros operadores no son solo choferes; son especialistas en logística defensiva. Capacitados bajo los más altos estándares internacionales para garantizar que la carga siempre llegue a su destino.
+                </p>
+                <ul class="space-y-4">
+                    <li class="flex items-center space-x-4">
+                        <div class="w-2 h-2 bg-[#d4af37] rounded-full"></div>
+                        <span class="text-sm font-light uppercase tracking-widest">Certificación Internacional OEA</span>
+                    </li>
+                    <li class="flex items-center space-x-4">
+                        <div class="w-2 h-2 bg-[#d4af37] rounded-full"></div>
+                        <span class="text-sm font-light uppercase tracking-widest">Control Biométrico de Fatiga</span>
+                    </li>
+                    <li class="flex items-center space-x-4">
+                        <div class="w-2 h-2 bg-[#d4af37] rounded-full"></div>
+                        <span class="text-sm font-light uppercase tracking-widest">Comunicación Satelital Encriptada</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto / Footer -->
+    <footer id="contacto" class="bg-black pt-24 pb-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-20">
+                <div class="col-span-2">
+                    <div class="flex items-center space-x-2 mb-8">
+                        <div class="w-8 h-8 border-2 border-[#d4af37] rounded-sm flex items-center justify-center rotate-45">
+                            <span class="rotate-[-45deg] font-bold text-sm text-[#d4af37]">27</span>
+                        </div>
+                        <span class="logo-text text-xl font-bold tracking-tighter italic">AI27 PREDICTIVE</span>
+                    </div>
+                    <p class="text-gray-500 font-light max-w-sm mb-8">
+                        Elevando los estándares de seguridad global a través de la inteligencia artificial y la excelencia táctica.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-600 hover:text-[#d4af37] transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-gray-600 hover:text-[#d4af37] transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-600 hover:text-[#d4af37] transition-colors"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h5 class="text-xs uppercase tracking-[0.3em] font-bold mb-6 text-white">Navegación</h5>
+                    <ul class="space-y-4 text-gray-500 text-sm font-light">
+                        <li><a href="#" class="hover:text-white transition-colors">Inicio</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Tecnología</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Global Operations</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Privacidad</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-xs uppercase tracking-[0.3em] font-bold mb-6 text-white">Contacto Directo</h5>
+                    <ul class="space-y-4 text-gray-500 text-sm font-light">
+                        <li>info@ai27.com</li>
+                        <li>+52 55 1234 5678</li>
+                        <li>HQ: Santa Fe, CDMX</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/5 pt-12 text-center">
+                <p class="text-[10px] text-gray-700 uppercase tracking-widest">&copy; 2024 AI27 Predictive Intelligence. Todos los derechos reservados. Diseño de Élite.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling y animaciones simples al hacer scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Efecto scroll para el nav
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2');
+                nav.style.backgroundColor = 'rgba(0, 0, 0, 0.95)';
+            } else {
+                nav.classList.remove('py-2');
+                nav.style.backgroundColor = 'rgba(10, 10, 10, 0.8)';
+            }
+        });
+    </script>
+</body>
+</html>
